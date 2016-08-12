@@ -1,7 +1,10 @@
-# nav-for-blind-server
+# Navigation for the blind
 
 ## Project at https://www.collaborizm.com/project/ByP-RLfF
 
-Start server 
+After pull run 
+> npm i
+
+To start server run 
 > npm start
 
