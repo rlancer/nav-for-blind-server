@@ -1,0 +1,4 @@
+---
+applications:
+- name: cite
+- memory: 512M
