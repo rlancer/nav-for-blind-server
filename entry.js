@@ -1,10 +1,20 @@
-const express = require('express'),
-  bodyParser = require('body-parser'),
-  http = require('http'),
-  path = require('path');
+import express from 'express';
+import bodyParser from 'body-parser';
+import  http from 'http';
+import path  from 'path';
+import NodeGeocoder from 'node-geocoder';
 
 
-var app = express();
+
+global.app = express();
+
+global.geocoder = NodeGeocoder({
+  provider: 'google',
+  httpAdapter: 'https', // Default
+  apiKey: 'AIzaSyBAKY4lG_NDhSbAgV1ibLGeJvRpO6ZuW6I',
+  formatter: null         // 'gpx', 'string', ...
+});
+
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -27,9 +37,7 @@ app.use(function (req, res, next) {
   }
 });
 
-app.get('/poi', function (req, res) {
-  // todo for a given point return whats around
-});
+require('./lib/routes');
 
 app.listen(process.env.PORT || 3006, function () {
   console.log('LISTENTING ON ', process.env.PORT || 3006);

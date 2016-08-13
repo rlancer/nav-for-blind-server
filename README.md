@@ -5,6 +5,9 @@
 After pull run 
 > npm i
 
+Install nodemon
+> npm i nodemon -g
+
 To start server run 
 > npm start
 
